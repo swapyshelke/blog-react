@@ -1,10 +1,11 @@
-import conf from "../conf/conf";
+import conf from "../conf/conf.js";
 import { Client, ID, Database, Storage, Query } from "appwrite";
 
 export class Service {
   client = new Client();
   database;
   bucket;
+
   constructor() {
     this.client
       .setEndpoint(conf.appWriteUrl)
@@ -130,7 +131,7 @@ export class Service {
   }
 
   // get file preview
-  
+
   getFilePreview(fileId) {
     return this.bucket.getFilePreview(
         conf.appWriteBucketId,

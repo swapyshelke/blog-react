@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "@reduxjs/toolkit";
-import { AuthService } from "./appwrite/auth.service.js";
-import {login, logout} from "./appwrite/store/authSlice.js"
+import { AuthService } from "./appwrite/auth.js";
+import {login, logout} from "./store/authSlice.js"
+import { Footer } from "./components/index.js";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -18,15 +19,15 @@ function App() {
 
     })
     .finally(() => setLoading(false))
-  }, [])
+  }, []);
 
- if(loading) {
-  return (
-    <>
-      <h1>Hello there...</h1>
-    </>
-  )
- }
+return !loading ? (
+  <div >
+    <Header />
+    <Footer />
+  </div>
+) : null;
+  
 }
 
 export default App
