@@ -1,0 +1,12 @@
+
+
+
+Production grade react components
+
+- create Logo component
+  - take optional property as width in px
+  - add logo to footer component
+- logoutBtn component in Header
+  - import authService & logout service
+  - use dispatch hook
+  - logoutHandler function
